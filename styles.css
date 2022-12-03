@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:wght@500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+body.theme-1 {
+  background-color: #3a4663;
+  color: white;
+}
+body.theme-1 button {
+  background-color: #eae3dc;
+  box-shadow: inset 0px -4px 0px #b3a497;
+  color: #434a59;
+}
+button {
+  border-radius: 5px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.333333px;
+  border: none;
+  min-width: 60px;
+  height: 64px;
+  cursor: pointer;
+}
+
+main {
+  padding: 30px 24px;
+  width: 375px;
+  border: #eae3dc 1px solid;
+  border-radius: 13px;
+}
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 26px;
+}
+header h1 {
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+header h2 {
+  align-self: flex-end;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.theme-selection {
+  width: 71px;
+  align-self: top;
+}
+.theme-labels {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+.switch-container {
+  background-color: #242d44;
+  border-radius: 13px;
+  height: 26px;
+  padding: 5px;
+}
+.switch {
+  height: 16px;
+  width: 16px;
+  background-color: #d03f2f;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+section.screen {
+  width: 100%;
+  min-height: 88px;
+  background-color: #181f33;
+  border-radius: 10px;
+  margin: 32px 0 24px 0;
+  padding: 29px 24px 22px 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+section.screen span {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 37px;
+  text-align: right;
+  letter-spacing: -0.666667px;
+}
+section.keypad {
+  width: 100%;
+  min-height: 420px;
+  background-color: #242d44;
+  border-radius: 10px;
+  padding: 24px;
+  display: grid;
+  gap: 13px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+body.theme-1 button {
+  background-color: #eae3dc;
+  box-shadow: inset 0px -4px 0px #b3a497;
+  color: #434a59;
+}
+body.theme-1 button.secondary-color {
+  background: #647198;
+  box-shadow: inset 0px -4px 0px #414e73;
+  color: white;
+}
+body.theme-1 button.accent-color {
+  background-color: #d03f2f;
+  box-shadow: inset 0px -4px 0px #93261a;
+  color: white;
+}
+button.text-small {
+  font-size: 20px;
+}
+button.large {
+  grid-column: span 2;
+}
+body.theme-1 button:hover {
+  background-color: #fffffe;
+}
+body.theme-1 button.secondary-color:hover {
+  background-color: #a2b2e1;
+}
+body.theme-1 button.accent-color:hover {
+  background-color: #f96b5b;
+}
+body.theme-1 button:active {
+  box-shadow: none;
+}
