@@ -8,7 +8,7 @@
     <title>calc</title>
   </head>
   <body class="theme-1">
-    <main>
+    <main id="calculator">
       <header>
         <h1>calc</h1>
         <h2>THEME</h2>
@@ -21,27 +21,31 @@
           </div>
         </div>
       </header>
-      <input type="text" class="screen" value="0" readonly />
+      <input type="text" id="screen" value="0" readonly />
 
       <section class="keypad">
         <button value="7">7</button>
         <button value="8">8</button>
         <button value="9">9</button>
-        <button class="text-small secondary-color">DEL</button>
+        <button data-action="delete" class="text-small secondary-color">
+          DEL
+        </button>
         <button value="4">4</button>
         <button value="5">5</button>
         <button value="6">6</button>
-        <button>+</button>
+        <button data-action="add">+</button>
         <button value="1">1</button>
         <button value="2">2</button>
         <button value="3">3</button>
-        <button>-</button>
-        <button>.</button>
+        <button data-action="subtract">-</button>
+        <button value=".">.</button>
         <button value="0">0</button>
-        <button>÷</button>
-        <button>x</button>
-        <button class="text-small large secondary-color">RESET</button>
-        <button class="large accent-color">=</button>
+        <button data-action="divide">÷</button>
+        <button data-action="multiply">x</button>
+        <button data-action="reset" class="text-small large secondary-color">
+          RESET
+        </button>
+        <button data-action="sum" class="large accent-color">=</button>
       </section>
     </main>
     <script src="scripts.js"></script>

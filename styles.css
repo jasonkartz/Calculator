@@ -78,7 +78,7 @@ header h2 {
   cursor: pointer;
 }
 
-input.screen {
+input#screen {
   width: 100%;
   min-height: 88px;
   background-color: #181f33;
