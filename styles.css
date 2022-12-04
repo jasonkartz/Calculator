@@ -35,7 +35,6 @@ button {
 main {
   padding: 30px 24px;
   width: 375px;
-  border: #eae3dc 1px solid;
   border-radius: 13px;
 }
 header {
@@ -79,23 +78,23 @@ header h2 {
   cursor: pointer;
 }
 
-section.screen {
+input.screen {
   width: 100%;
   min-height: 88px;
   background-color: #181f33;
+  color: white;
   border-radius: 10px;
   margin: 32px 0 24px 0;
   padding: 29px 24px 22px 24px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-section.screen span {
   font-weight: 700;
   font-size: 40px;
   line-height: 37px;
   text-align: right;
   letter-spacing: -0.666667px;
+  border: none;
+}
+input.screen:focus {
+  outline: none;
 }
 section.keypad {
   width: 100%;
