@@ -56,17 +56,63 @@ function sum() {
   if (
     calculator.waitingSecondOperand &&
     calculator.displayValue &&
-    calculator.firstOperand
+    calculator.firstOperand &&
+    calculator.operator
   ) {
-    switch (calculator.firstOperand) {
+    const displayValue = parseFloat(calculator.displayValue);
+    let sum;
+    switch (calculator.operator) {
       case "add":
-        calculator.displayValue =
-          calculator.displayValue + calculator.firstOperand;
+        sum = calculator.firstOperand + displayValue;
+        screen.value = sum;
+        calculator.firstOperand = sum;
+        calculator.displayValue = "";
+        break;
+      case "subtract":
+        sum = calculator.firstOperand - displayValue;
+        screen.value = sum;
+        calculator.firstOperand = sum;
+        calculator.displayValue = "";
+        break;
+      case "multiply":
+        sum = calculator.firstOperand * displayValue;
+        screen.value = sum;
+        calculator.firstOperand = sum;
+        calculator.displayValue = "";
+        break;
+      case "divide":
+        sum = calculator.firstOperand / displayValue;
+        screen.value = sum;
+        calculator.firstOperand = sum;
+        calculator.displayValue = "";
+        break;
     }
+  } else {
+    return null;
   }
 }
 
-function operator(type) {}
+function operator(type) {
+  if (
+    calculator.waitingSecondOperand &&
+    calculator.displayValue &&
+    calculator.firstOperand &&
+    calculator.operator
+  ) {
+    sum();
+    calculator.operator = type;
+    calculator.firstOperand = parseFloat(calculator.displayValue);
+    calculator.displayValue = "";
+  } else if (calculator.displayValue === "") {
+    return null;
+  } else {
+    calculator.firstOperand = parseFloat(calculator.displayValue);
+    calculator.displayValue = "";
+    calculator.waitingSecondOperand = true;
+    calculator.operator = type;
+  }
+  console.log("operator", calculator.operator);
+}
 
 keys.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -81,7 +127,7 @@ keys.addEventListener("click", (e) => {
       case action === "subtract":
       case action === "divide":
       case action === "multiply":
-        console.log("operator", action);
+        operator(action);
         break;
       case action === "reset":
         reset();
@@ -90,7 +136,7 @@ keys.addEventListener("click", (e) => {
         deleteDigit();
         break;
       case action === "sum":
-        console.log("action", action);
+        sum();
         break;
     }
   }
