@@ -13,8 +13,9 @@ const calculator = {
   decimalUsed: false,
   firstOperand: null,
   operator: null,
-  secondOperand: null,
+  waitingSecondOperand: false,
 };
+
 function setScreen(value) {
   switch (true) {
     case value === "." && calculator.decimalUsed:
@@ -35,7 +36,38 @@ function setScreen(value) {
       screen.value = calculator.displayValue;
   }
 }
-console.log(calculator.displayValue);
+
+function reset() {
+  calculator.displayValue = "";
+  calculator.decimalUsed = false;
+  calculator.firstOperand = null;
+  calculator.operator = null;
+  calculator.waitingSecondOperand = false;
+  screen.value = 0;
+}
+function deleteDigit() {
+  calculator.displayValue = calculator.displayValue.slice(0, -1);
+  screen.value = calculator.displayValue === "" ? 0 : calculator.displayValue;
+  if (!calculator.displayValue.includes(".")) {
+    calculator.decimalUsed = false;
+  }
+}
+function sum() {
+  if (
+    calculator.waitingSecondOperand &&
+    calculator.displayValue &&
+    calculator.firstOperand
+  ) {
+    switch (calculator.firstOperand) {
+      case "add":
+        calculator.displayValue =
+          calculator.displayValue + calculator.firstOperand;
+    }
+  }
+}
+
+function operator(type) {}
+
 keys.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
     const key = e.target;
@@ -52,10 +84,10 @@ keys.addEventListener("click", (e) => {
         console.log("operator", action);
         break;
       case action === "reset":
-        console.log("action", action);
+        reset();
         break;
       case action === "delete":
-        console.log("action", action);
+        deleteDigit();
         break;
       case action === "sum":
         console.log("action", action);
