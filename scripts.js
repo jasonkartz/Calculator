@@ -8,6 +8,7 @@ Your users should be able to:
 */
 const keys = document.querySelector(".keypad");
 const screen = document.getElementById("screen");
+
 const calculator = {
   displayValue: "",
   decimalUsed: false,
@@ -47,7 +48,12 @@ function reset() {
 }
 function deleteDigit() {
   calculator.displayValue = calculator.displayValue.slice(0, -1);
-  screen.value = calculator.displayValue === "" ? 0 : calculator.displayValue;
+  if (calculator.displayValue === "") {
+    reset();
+  } else {
+    screen.value = calculator.displayValue;
+  }
+
   if (!calculator.displayValue.includes(".")) {
     calculator.decimalUsed = false;
   }

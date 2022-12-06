@@ -131,6 +131,9 @@ button.large {
 body.theme-1 button:hover {
   background-color: #fffffe;
 }
+body.theme-1 button.active-operator {
+  background-color: #fffffe;
+}
 body.theme-1 button.secondary-color:hover {
   background-color: #a2b2e1;
 }
