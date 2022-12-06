@@ -64,47 +64,31 @@ function sum() {
     switch (calculator.operator) {
       case "add":
         sum = calculator.firstOperand + displayValue;
-        screen.value = sum;
-        calculator.firstOperand = sum;
-        calculator.displayValue = "";
         break;
       case "subtract":
         sum = calculator.firstOperand - displayValue;
-        screen.value = sum;
-        calculator.firstOperand = sum;
-        calculator.displayValue = "";
         break;
       case "multiply":
         sum = calculator.firstOperand * displayValue;
-        screen.value = sum;
-        calculator.firstOperand = sum;
-        calculator.displayValue = "";
         break;
       case "divide":
         sum = calculator.firstOperand / displayValue;
-        screen.value = sum;
-        calculator.firstOperand = sum;
-        calculator.displayValue = "";
         break;
     }
+    screen.value = sum;
+    calculator.firstOperand = sum;
+    calculator.displayValue = "";
+    calculator.decimalUsed = false;
+    calculator.operator = null;
   } else {
     return null;
   }
 }
 
 function operator(type) {
-  if (
-    calculator.waitingSecondOperand &&
-    calculator.displayValue &&
-    calculator.firstOperand &&
-    calculator.operator
-  ) {
+  if (calculator.waitingSecondOperand) {
     sum();
     calculator.operator = type;
-    calculator.firstOperand = parseFloat(calculator.displayValue);
-    calculator.displayValue = "";
-  } else if (calculator.displayValue === "") {
-    return null;
   } else {
     calculator.firstOperand = parseFloat(calculator.displayValue);
     calculator.displayValue = "";
