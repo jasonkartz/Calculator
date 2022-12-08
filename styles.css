@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  transition: color 0.03s linear, background-color 0.15s linear;
 }
 body {
   font-family: "Spartan", sans-serif;
@@ -15,7 +16,14 @@ body.theme-1 {
   background-color: #3a4663;
   color: white;
 }
-
+body.theme-2 {
+  background-color: #e6e6e6;
+  color: #36362c;
+}
+body.theme-3 {
+  background-color: #17062a;
+  color: #ffe53d;
+}
 main {
   padding: 30px 24px;
   width: 375px;
@@ -49,23 +57,31 @@ header h2 {
   margin-bottom: 5px;
 }
 .switch-container {
-  background-color: #242d44;
   border-radius: 13px;
   height: 26px;
   padding: 5px;
   position: relative;
 }
+body.theme-1 .switch-container {
+  background-color: #242d44;
+}
+body.theme-2 .switch-container {
+  background-color: #d2cdcd;
+}
+body.theme-3 .switch-container {
+  background-color: #1e0936;
+}
 .switch-container .btn-container {
   width: 71px;
   position: absolute;
   left: 0px;
-  bottom: 4.5px;
+  bottom: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .switch-container .btn-container button {
-  height: 16px;
-  width: 16px;
+  height: 50px;
+  width: 35px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -73,24 +89,24 @@ header h2 {
 .switch {
   height: 16px;
   width: 16px;
-  background-color: #d03f2f;
   border-radius: 13px;
   cursor: pointer;
 }
 body.theme-1 .switch {
+  background-color: #d03f2f;
   margin-right: auto;
 }
 body.theme-2 .switch {
+  background-color: #c85402;
   margin-inline: auto;
 }
 body.theme-3 .switch {
+  background-color: #00ded0;
   margin-left: auto;
 }
 input#screen {
   width: 100%;
   min-height: 88px;
-  background-color: #181f33;
-  color: white;
   border-radius: 10px;
   margin: 32px 0 24px 0;
   padding: 29px 24px 22px 24px;
@@ -101,19 +117,39 @@ input#screen {
   letter-spacing: -0.666667px;
   border: none;
 }
+body.theme-1 input#screen {
+  background-color: #181f33;
+  color: white;
+}
+body.theme-2 input#screen {
+  background-color: #eeeeee;
+  color: #36362c;
+}
+body.theme-3 input#screen {
+  background-color: #1e0936;
+  color: #ffe53d;
+}
 input.screen:focus {
   outline: none;
 }
 section.keypad {
   width: 100%;
   min-height: 420px;
-  background-color: #242d44;
   border-radius: 10px;
   padding: 24px;
   display: grid;
   gap: 13px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+}
+body.theme-1 section.keypad {
+  background-color: #242d44;
+}
+body.theme-2 section.keypad {
+  background-color: #d2cdcd;
+}
+body.theme-3 section.keypad {
+  background-color: #1e0936;
 }
 .keypad button {
   border-radius: 5px;
@@ -126,19 +162,40 @@ section.keypad {
   height: 64px;
   cursor: pointer;
 }
-body.theme-1 .keypad button {
-  background-color: #eae3dc;
-  box-shadow: inset 0px -4px 0px #b3a497;
-  color: #434a59;
+.keypad button.text-small {
+  font-size: 20px;
+}
+.keypad button.large {
+  grid-column: span 2;
 }
 body.theme-1 .keypad button {
   background-color: #eae3dc;
   box-shadow: inset 0px -4px 0px #b3a497;
   color: #434a59;
+}
+body.theme-2 .keypad button {
+  background-color: #e5e4e1;
+  box-shadow: inset 0px -4px 0px #a79e91;
+  color: #36362c;
+}
+body.theme-3 .keypad button {
+  background: #331c4d;
+  box-shadow: inset 0px -4px 0px #881c9e;
+  color: #ffe53d;
 }
 body.theme-1 .keypad button.secondary-color {
   background: #647198;
   box-shadow: inset 0px -4px 0px #414e73;
+  color: white;
+}
+body.theme-2 .keypad button.secondary-color {
+  background: #378187;
+  box-shadow: inset 0px -4px 0px #1b6066;
+  color: white;
+}
+body.theme-3 .keypad button.secondary-color {
+  background: #56077c;
+  box-shadow: inset 0px -4px 0px #be15f4;
   color: white;
 }
 body.theme-1 .keypad button.accent-color {
@@ -146,21 +203,45 @@ body.theme-1 .keypad button.accent-color {
   box-shadow: inset 0px -4px 0px #93261a;
   color: white;
 }
-.keypad button.text-small {
-  font-size: 20px;
+body.theme-2 .keypad button.accent-color {
+  background: #c85402;
+  box-shadow: inset 0px -4px 0px #873901;
+  color: white;
 }
-.keypad button.large {
-  grid-column: span 2;
+body.theme-3 .keypad button.accent-color {
+  background: #00ded0;
+  box-shadow: inset 0px -4px 0px #6cf9f1;
+  color: #1a2327;
 }
 body.theme-1 .keypad button:hover {
   background-color: #fffffe;
 }
+body.theme-2 .keypad button:hover {
+  background-color: #ffffff;
+}
+body.theme-3 .keypad button:hover {
+  background-color: #6c34ac;
+}
 body.theme-1 .keypad button.secondary-color:hover {
   background-color: #a2b2e1;
+}
+body.theme-2 .keypad button.secondary-color:hover {
+  background-color: #62b5bc;
+}
+body.theme-3 .keypad button.secondary-color:hover {
+  background-color: #8631af;
 }
 body.theme-1 .keypad button.accent-color:hover {
   background-color: #f96b5b;
 }
-body.theme-1 .keypad button:active {
+body.theme-2 .keypad button.accent-color:hover {
+  background-color: #ff8a38;
+}
+body.theme-3 .keypad button.accent-color:hover {
+  background-color: #93fff8;
+}
+body.theme-1 .keypad button:active,
+body.theme-2 .keypad button:active,
+body.theme-3 .keypad button:active {
   box-shadow: none;
 }
