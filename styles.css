@@ -26,6 +26,7 @@ body.theme-3 {
   color: #ffe53d;
 }
 main {
+  margin-top: clamp(1px, 9vw, 68px);
   padding: 30px clamp(1px, 5vw, 24px);
   width: 100%;
   max-width: 564px;
