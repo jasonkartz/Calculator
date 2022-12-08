@@ -156,13 +156,12 @@ body.theme-3 section.keypad {
   background-color: #1e0936;
 }
 .keypad button {
-  border-radius: 5px;
+  border-radius: clamp(5px, 2vw, 10px);
   font-size: clamp(32px, 7vw, 40px);
   font-weight: 700;
   text-align: center;
   letter-spacing: -0.333333px;
   border: none;
-
   height: 64px;
   cursor: pointer;
 }
