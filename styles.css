@@ -15,22 +15,6 @@ body.theme-1 {
   background-color: #3a4663;
   color: white;
 }
-body.theme-1 button {
-  background-color: #eae3dc;
-  box-shadow: inset 0px -4px 0px #b3a497;
-  color: #434a59;
-}
-button {
-  border-radius: 5px;
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.333333px;
-  border: none;
-  min-width: 60px;
-  height: 64px;
-  cursor: pointer;
-}
 
 main {
   padding: 30px 24px;
@@ -69,6 +53,22 @@ header h2 {
   border-radius: 13px;
   height: 26px;
   padding: 5px;
+  position: relative;
+}
+.switch-container .btn-container {
+  width: 71px;
+  position: absolute;
+  left: 0px;
+  bottom: 4.5px;
+  display: flex;
+  justify-content: space-around;
+}
+.switch-container .btn-container button {
+  height: 16px;
+  width: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .switch {
   height: 16px;
@@ -77,7 +77,15 @@ header h2 {
   border-radius: 13px;
   cursor: pointer;
 }
-
+body.theme-1 .switch {
+  margin-right: auto;
+}
+body.theme-2 .switch {
+  margin-inline: auto;
+}
+body.theme-3 .switch {
+  margin-left: auto;
+}
 input#screen {
   width: 100%;
   min-height: 88px;
@@ -107,39 +115,52 @@ section.keypad {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
-body.theme-1 button {
+.keypad button {
+  border-radius: 5px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.333333px;
+  border: none;
+  min-width: 60px;
+  height: 64px;
+  cursor: pointer;
+}
+body.theme-1 .keypad button {
   background-color: #eae3dc;
   box-shadow: inset 0px -4px 0px #b3a497;
   color: #434a59;
 }
-body.theme-1 button.secondary-color {
+body.theme-1 .keypad button {
+  background-color: #eae3dc;
+  box-shadow: inset 0px -4px 0px #b3a497;
+  color: #434a59;
+}
+body.theme-1 .keypad button.secondary-color {
   background: #647198;
   box-shadow: inset 0px -4px 0px #414e73;
   color: white;
 }
-body.theme-1 button.accent-color {
+body.theme-1 .keypad button.accent-color {
   background-color: #d03f2f;
   box-shadow: inset 0px -4px 0px #93261a;
   color: white;
 }
-button.text-small {
+.keypad button.text-small {
   font-size: 20px;
 }
-button.large {
+.keypad button.large {
   grid-column: span 2;
 }
-body.theme-1 button:hover {
+body.theme-1 .keypad button:hover {
   background-color: #fffffe;
 }
-body.theme-1 button.active-operator {
-  background-color: #fffffe;
-}
-body.theme-1 button.secondary-color:hover {
+body.theme-1 .keypad button.secondary-color:hover {
   background-color: #a2b2e1;
 }
-body.theme-1 button.accent-color:hover {
+body.theme-1 .keypad button.accent-color:hover {
   background-color: #f96b5b;
 }
-body.theme-1 button:active {
+body.theme-1 .keypad button:active {
   box-shadow: none;
 }

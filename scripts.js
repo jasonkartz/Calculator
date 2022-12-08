@@ -9,6 +9,10 @@ Your users should be able to:
 const keys = document.querySelector(".keypad");
 const screen = document.getElementById("screen");
 
+const theme1 = document.getElementById("select-theme-1");
+const theme2 = document.getElementById("select-theme-2");
+const theme3 = document.getElementById("select-theme-3");
+
 const calculator = {
   displayValue: "",
   decimalUsed: false,
@@ -130,4 +134,23 @@ keys.addEventListener("click", (e) => {
         break;
     }
   }
+});
+
+theme1.addEventListener("click", () => {
+  const bodyClass = document.body.classList;
+  bodyClass.remove("theme-2");
+  bodyClass.remove("theme-3");
+  bodyClass.add("theme-1");
+});
+theme2.addEventListener("click", () => {
+  const bodyClass = document.body.classList;
+  bodyClass.remove("theme-1");
+  bodyClass.remove("theme-3");
+  bodyClass.add("theme-2");
+});
+theme3.addEventListener("click", () => {
+  const bodyClass = document.body.classList;
+  bodyClass.remove("theme-1");
+  bodyClass.remove("theme-2");
+  bodyClass.add("theme-3");
 });
