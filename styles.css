@@ -2,7 +2,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  transition: color 0.03s linear, background-color 0.15s linear;
+  transition: color 0.03s linear, background-color 0.05s linear,
+    box-shadow 0.15s linear;
 }
 body {
   font-family: "Spartan", sans-serif;
@@ -25,8 +26,9 @@ body.theme-3 {
   color: #ffe53d;
 }
 main {
-  padding: 30px 24px;
-  width: 375px;
+  padding: 30px clamp(1px, 5vw, 24px);
+  width: 100%;
+  max-width: 564px;
   border-radius: 13px;
 }
 header {
@@ -106,12 +108,13 @@ body.theme-3 .switch {
 }
 input#screen {
   width: 100%;
-  min-height: 88px;
+  height: clamp(88px, 22vw, 128px);
   border-radius: 10px;
   margin: 32px 0 24px 0;
-  padding: 29px 24px 22px 24px;
+  padding-block: 0;
+  padding-inline: clamp(24px, 6vw, 30px);
   font-weight: 700;
-  font-size: 40px;
+  font-size: clamp(40px, 10vw, 56px);
   line-height: 37px;
   text-align: right;
   letter-spacing: -0.666667px;
@@ -136,9 +139,9 @@ section.keypad {
   width: 100%;
   min-height: 420px;
   border-radius: 10px;
-  padding: 24px;
+  padding: clamp(24px, 6vw, 30px);
   display: grid;
-  gap: 13px;
+  gap: clamp(13px, 4vw, 24px);
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
@@ -153,17 +156,17 @@ body.theme-3 section.keypad {
 }
 .keypad button {
   border-radius: 5px;
-  font-size: 32px;
+  font-size: clamp(32px, 7vw, 40px);
   font-weight: 700;
   text-align: center;
   letter-spacing: -0.333333px;
   border: none;
-  min-width: 60px;
+
   height: 64px;
   cursor: pointer;
 }
 .keypad button.text-small {
-  font-size: 20px;
+  font-size: clamp(20px, 5vw, 28px);
 }
 .keypad button.large {
   grid-column: span 2;
