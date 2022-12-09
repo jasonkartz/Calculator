@@ -121,6 +121,9 @@ input#screen {
   letter-spacing: -0.666667px;
   border: none;
 }
+input#screen:focus {
+  outline: none;
+}
 body.theme-1 input#screen {
   background-color: #181f33;
   color: white;
@@ -142,7 +145,7 @@ section.keypad {
   border-radius: 10px;
   padding: clamp(24px, 6vw, 30px);
   display: grid;
-  gap: clamp(13px, 4vw, 24px);
+  gap: clamp(5px, 4vw, 24px);
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
